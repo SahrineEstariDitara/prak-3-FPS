@@ -26,14 +26,13 @@ btnTag.addEventListener("click", () => {
 });
 
 document.querySelectorAll("#btnAll").forEach((btnAll) => {
-  btnAll.addEventListener("click", () => {
+  btnAll.addEventLsistener("click", () => {
     const body = document.querySelector("body");
     body.classList.toggle("dark-mode");
     const dark = body.classList.contains("dark-mode");
-
     body.style.background = dark ? "#000" : "";
     body.style.color = dark ? "#fff" : "";
-    document.querySelectorAll(".btn").forEach((b) => {
+    document.querySelectorAll(".  ").forEach((b) => {
       b.style.background = dark ? "#333" : "";
       b.style.color = dark ? "#fff" : "";
       b.style.border = dark ? "1px solid #555" : "";

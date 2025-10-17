@@ -213,3 +213,9 @@ nav .navlinks li a {
     right: 0;
   }
 }
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
