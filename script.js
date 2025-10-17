@@ -21,6 +21,7 @@ btnTag.addEventListener("click", () => {
   const semuaP = document.getElementsByTagName("p");
   for (let p of semuaP) {
     p.style.fontStyle = "italic";
+    p.style.fontSize = "18px";
   }
 });
 
