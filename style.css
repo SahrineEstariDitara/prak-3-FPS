@@ -6,15 +6,23 @@
   text-decoration: none;
   /* color: darkorange; */
 }
+body,
+h1,
+h3,
+p,
+button,
+a {
+  transition: all 0.3s ease;
+}
 
 body {
-  overflow: hidden;
+  overflow: auto;
 }
 .hero-header {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background: #fbfbfb;
+  background: #f7f7f7;
 }
 .wrapper {
   width: 1280px;
@@ -85,15 +93,19 @@ nav .navlinks li a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 8rem;
+  margin-top: 60px;
+  padding-bottom: 8rem;
+  /* background-color: red; */
+  /* margin-bottom: 60px; */
 }
 .container .hero-pic {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   overflow: hidden;
-  border: 15px solid #0077b6;
-  box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+  border: 8px solid #0077b6;
+  box-shadow: 5px 7px 20px rgba(0, 0, 0, 0.5);
 }
 .hero-pic img {
   height: 100%;
@@ -163,7 +175,77 @@ nav .navlinks li a {
   color: #007ced;
   transform: rotate(360deg);
 }
+.section-input {
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-container {
+  width: 260px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  /* text-align: center; */
+}
 
+label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* Kotak input */
+input[name="nama"] {
+  width: 260px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder abu lembut */
+input[name="nama"]::placeholder {
+  color: #999;
+}
+
+/* Efek fokus */
+input[name="nama"]:focus {
+  border-color: #0078ff;
+  box-shadow: 0 0 6px rgba(0, 120, 255, 0.3);
+}
+
+.input-name {
+  /* background-color: red; */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 0.1rem solid #0078ff !important;
+  border-radius: 12px !important;
+  color: #333;
+  padding: 10px;
+  width: 300px;
+}
+.input-name:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+}
+
+.input-container p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #222;
+}
 /* responsive design & display navbar fpr small screen */
 @media (max-width: 930px) {
   nav .togglebtn {
@@ -214,8 +296,374 @@ nav .navlinks li a {
   }
 }
 
-.input {
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== Contact Section ===== */
+/* ===== Contact Section (Full Width Layout) ===== */
+.contact-section {
+  /* min-height: 100vh;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  /* padding: 20px 20px; */
+  border-radius: 16px;
+  background-color: #fcfcfc;
+  border: 1px solid cornflowerblue;
+}
+
+/* Container tetap di tengah dan memiliki batas lebar */
+.contact-container {
+  width: 100%;
+  max-width: 600px; /* menjaga form tetap proporsional */
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.contact-container h2 {
+  color: cornflowerblue;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* ===== Form Styles ===== */
+.contact-form {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: Poppins, sans-serif;
+  color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 6px rgba(0, 120, 255, 0.3);
+}
+
+.contact-form button {
+  align-self: center;
+  width: 180px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  /* transform: scale(1.05); */
+  background-color: #005fa3;
+}
+
+/* Dark mode adjustment (optional if kamu pakai toggle tema) */
+.dark-mode .contact-section {
+  background-color: #111;
+}
+
+.dark-mode .contact-container {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+/* ===== Footer Section ===== */
+.footer {
+  width: 100%;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #fff;
+  border-radius: 16px 16px 0px 0px;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.footer-socials a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #caf0f8;
+  transform: translateY(-3px);
+}
+
+/* ===== Popup Notification ===== */
+.popup {
+  position: fixed;
+  bottom: 30px;
+  right: -400px; /* posisi awal di luar layar */
+  width: 320px;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 16px 20px;
+  font-family: Poppins, sans-serif;
+  display: flex;
+  align-items: center;
   gap: 12px;
+  z-index: 999;
+  opacity: 0;
+}
+
+.popup i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.popup.show {
+  opacity: 1;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    right: -400px;
+    opacity: 0;
+  }
+  to {
+    right: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 30px;
+    opacity: 1;
+  }
+  to {
+    right: -400px;
+    opacity: 0;
+  }
+}
+/* === DARK MODE THEME (Blue Accent) === */
+body.dark-mode {
+  background-color: #0d1117;
+  color: #e0e0e0;
+}
+
+/* Header & Navbar */
+body.dark-mode header {
+  background-color: transparent;
+}
+
+body.dark-mode .logo-text,
+body.dark-mode .logo span {
+  color: #60a5fa; /* biru lembut */
+}
+
+body.dark-mode nav .navlinks li a {
+  color: #a3c9ff;
+  transition: 0.3s ease;
+}
+
+body.dark-mode nav .navlinks li a:hover {
+  color: #3b82f6; /* aksen biru utama */
+}
+
+/* Hero Section */
+body.dark-mode .hero-header {
+  background-color: #0d1117;
+}
+
+body.dark-mode .hero-text h1 {
+  color: #3b82f6;
+}
+
+body.dark-mode .hero-text p {
+  color: #aab0b6;
+}
+
+body.dark-mode .btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #60a5fa;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+body.dark-mode .contact-section {
+  background-color: #0d1117;
+  border-color: #1e3a8a;
+}
+
+body.dark-mode .contact-container {
+  background-color: #0d1117;
+  border-radius: 16px;
+  padding: 40px;
+  /* border: 1px solid #1e3a8a; */
+}
+
+body.dark-mode .contact-container h2 {
+  color: #3b82f6;
+}
+
+body.dark-mode .contact-container p {
+  color: #aab0b6;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #1f2937;
+  color: #f1f5f9;
+  border-color: #334155;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+body.dark-mode .contact-form button {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+body.dark-mode .contact-form button:hover {
+  background-color: #60a5fa;
+}
+
+/* Footer */
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+}
+
+body.dark-mode .footer p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .footer-socials a {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .footer-socials a:hover {
+  color: #60a5fa;
+  transform: translateY(-3px);
+}
+
+/* Popup Notification */
+body.dark-mode .popup {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+/* === Toggle Icon Improvements (white icons, glow effect) === */
+.theme-toggle {
+  position: absolute;
+  top: 35px;
+  right: 50px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: all 0.4s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.fa-sun,
+.fa-moon {
+  color: #3b82f6 !important;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.icon-hidden {
+  transform: scale(0);
+  opacity: 0;
+  position: absolute;
+}
+
+/* === ICON THEME COLORS === */
+
+/* Saat light mode (default) */
+.theme-toggle {
+  color: #3b82f6; /* biru modern */
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.theme-toggle:hover {
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.6);
+}
+
+/* Saat dark mode aktif, ikon berubah jadi putih */
+body.dark-mode .theme-toggle {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  border-color: rgba(59, 130, 246, 0.4);
 }

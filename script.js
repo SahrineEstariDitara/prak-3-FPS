@@ -1,72 +1,77 @@
-// getElementById ===
-const btnJudul = document.getElementById("btnJudul");
-btnJudul.addEventListener("click", () => {
-  const judul = document.getElementById("judul");
-  judul.style.color = judul.style.color === "darkorange" ? "" : "darkorange";
+var typed = new Typed("#typed-name", {
+  strings: ["Sahrine Estari Ditara"],
+  typeSpeed: 100,
+  backSpeed: 30,
+  backDelay: 1500,
+  loop: true,
+  showCursor: true,
+  smartBackspace: false,
 });
+$(document).ready(function () {
+  // Event saat form dikirim
+  $(".contact-form").on("submit", function (e) {
+    e.preventDefault(); // Mencegah reload halaman
+    showPopup("Pesan berhasil dikirim!");
+  });
 
-// getElementsByClassName
-const btnPesan = document.getElementById("btnPesan");
-btnPesan.addEventListener("click", () => {
-  const bio = document.getElementsByClassName("new-paragraf")[0];
-  const pesanBaru = document.createElement("p");
-  pesanBaru.textContent = "Halo! Ini pesan dari sharinee🫠💫.";
-  pesanBaru.style.color = "green";
-  bio.appendChild(pesanBaru);
-});
+  // Event tambahan: klik tombol Contact Here
+  $("#btnPesan").click(function () {
+    showPopup("Tombol Contact diklik!");
+  });
 
-// getElementsByTagName
-const btnTag = document.getElementById("btnTag");
-btnTag.addEventListener("click", () => {
-  const semuaP = document.getElementsByTagName("p");
-  for (let p of semuaP) {
-    p.style.fontStyle = "italic";
-    p.style.fontSize = "18px";
+  // Fungsi untuk menampilkan popup dengan animasi
+  function showPopup(message) {
+    // Ubah teks popup
+    $("#popup-text").text(message);
+
+    // Tampilkan popup dengan efek fadeIn
+    $("#popup").stop(true, true).fadeIn(400).addClass("show");
+
+    // Ubah style border agar dinamis
+    $("#popup").css("border", "1px solid #fff");
+
+    // Tambahkan elemen HTML tebal pada teks
+    $("#popup-text").html("<b>" + message + "</b>");
+
+    // Setelah 3 detik, sembunyikan popup dengan efek fadeOut
+    setTimeout(function () {
+      $("#popup").fadeOut(400).css("animation", "slideOut 0.5s ease forwards");
+    }, 3000);
   }
 });
 
-document.querySelectorAll("#btnAll").forEach((btnAll) => {
-  btnAll.addEventLsistener("click", () => {
-    const body = document.querySelector("body");
-    body.classList.toggle("dark-mode");
-    const dark = body.classList.contains("dark-mode");
-    body.style.background = dark ? "#000" : "";
-    body.style.color = dark ? "#fff" : "";
-    document.querySelectorAll(".  ").forEach((b) => {
-      b.style.background = dark ? "#333" : "";
-      b.style.color = dark ? "#fff" : "";
-      b.style.border = dark ? "1px solid #555" : "";
-    });
+// ==== Fitur Dark Mode dengan jQuery ====
+$(document).ready(function () {
+  const toggleBtn = $("#theme-toggle");
+  const body = $("body");
+  const moonIcon = $("#moon-icon");
+  const sunIcon = $("#sun-icon");
+
+  // Cek tema tersimpan di localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.addClass("dark-mode");
+    moonIcon.addClass("icon-hidden");
+    sunIcon.removeClass("icon-hidden");
+  }
+
+  // Event klik tombol toggle
+  toggleBtn.click(function () {
+    toggleBtn.addClass("rotate");
+    setTimeout(() => toggleBtn.removeClass("rotate"), 500);
+
+    // Ganti tema
+    body.toggleClass("dark-mode");
+
+    // Animasi ikon
+    moonIcon.toggleClass("icon-hidden");
+    sunIcon.toggleClass("icon-hidden");
+
+    // Simpan preferensi pengguna
+    if (body.hasClass("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
-});
-
-// getElementsByName() → ubah nilai otomatis dari field "nama"
-// document.getElementById('btnNama').addEventListener('click', () => {
-//   const inputNama = document.getElementsByName('nama')[0];
-//   inputNama.value = 'Mahasiswa UNISA';
-// });
-
-document.getElementById("btnNama").addEventListener("click", () => {
-  let elements = document.getElementsByName("nama");
-  document.getElementById("tampilkan").innerHTML = elements[0].value;
-});
-
-// membuat tombol clik unutk menampilkan navbar//
-var togglebtn = document.querySelector(".togglebtn");
-var navlinks = document.querySelector(".navlinks");
-var links = document.querySelectorAll(".navlinks li");
-
-togglebtn.addEventListener("click", function () {
-  this.classList.toggle("click");
-  navlinks.classList.toggle("open");
-});
-
-var typed = new Typed("#typed-name", {
-  strings: ["Sahrine Estari Ditara"],
-  typeSpeed: 100, // Kecepatan mengetik (ms)
-  backSpeed: 30, // Kecepatan menghapus (ms)
-  backDelay: 1500, // Jeda sebelum menghapus (ms)
-  loop: true, // Ulang terus efeknya
-  showCursor: true,
-  smartBackspace: false,
 });

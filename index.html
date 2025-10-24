@@ -1,102 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>This is Sherinne🤗</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-  </head>
-  <body >
-    <div class="hero-header">
-      <div class="wrapper">
-        <header>
-          <div class="logo">
-            <!-- <i class="fa-solid fa-a"></i> -->
-            <div class="logo-text">
-              <span>Sherinne🫠</span>
-            </div>
-          </div>
-          <nav>
-            <div class="togglebtn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <ul class="navlinks">
-              <li><a href="about.html">About</a></li>
-              <li><a href="experience.html">Experience</a></li>
-              <li><a href="project.html">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-        <div class="container">
-          <div class="hero-pic">
-            <img src="images/me.jpg" alt="profile pic" />
-          </div>
-          <div class="hero-text">
-            <h3 id="judul">
-              Hello my name is
-              <!-- <span>an Information Technology student</span> -->
-            </h3>
-            <h1><span id="typed-name"></span></h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This is Sherinne🤗</title>
 
-            <p class="new-paragraf">
-              I am an Information Technology student at Universitas 'Aisyiyah
-              Yogyakarta. I am currently in my third semester. I chose this
-              major because I am deeply interested in technology, programming,
-              and how digital systems can improve people’s lives.
-            </p>
+  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+</head>
 
-            <div class="btn-group">
-              <button class="btn-primary" id="btnJudul">Judul</button>
-              <button class="btn-primary" id="btnPesan">Pesan</button>
-              <button class="btn-primary" id="btnTag">teting tag</button>
-              <button class="btn-primary" id="btnAll"">tema</button>
-            </div>
-            <div class="sosial">
-              <a href="#"><i class="fa-brands fa-Instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-Linkedin"></i></a>
-            </div>
-
-            <div class="input">
-              <label for="nama">Masukkan Nama :</label>
-                <input type="text" name="nama" class="input-name" placeholder="Ketik nama di sini..." />
-                <button id="btnNama" class="btn btn-color-2">Tampilkan</button>
-                <p class="section__text__p3" id="tampilkan"></p>
-            </div>
+<body>
+  <div class="hero-header">
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <div class="logo-text">
+            <span>Sherinne🫠</span>
           </div>
         </div>
+        <nav>
+          <div class="togglebtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navlinks">
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Tambahkan di dalam header kamu -->
+            <button class="theme-toggle" id="theme-toggle">
+              <i class="fa-solid fa-moon" id="moon-icon"></i>
+              <i class="fa-solid fa-sun icon-hidden" id="sun-icon"></i>
+            </button>
+          </ul>
+
+
+        </nav>
+      </header>
+      <div class="container">
+        <div class="btn  hero-pic">
+          <img src="images/me.jpg" alt="profile pic" />
+        </div>
+        <div class="hero-text">
+          <h3 id="judul">
+            Hello my name is </h3>
+          <h1><span id="typed-name"></span></h1>
+
+          <p class="new-paragraf">
+            I am an Information Technology student at Universitas 'Aisyiyah
+            Yogyakarta. I am currently in my third semester. I chose this
+            major because I am deeply interested in technology, programming,
+            and how digital systems can improve people'ss lives.
+          </p>
+
+          <div class="btn-group">
+            <button class="btn btn-primary" id="btnJudul">Download CV</button>
+            <button class="btn btn-primary" id="btnPesan">Contact here</button>
+          </div>
+          <div class="sosial">
+            <a href="#"><i class="fa-brands fa-Instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-Linkedin"></i></a>
+          </div>
+
+        </div>
       </div>
+
+      <!-- ===== Contact Section ===== -->
+      <section class="contact-section" id="contact">
+        <div class="contact-container">
+          <h2>Contact Me</h2>
+          <p>Feel free to reach out via email or message below 👇</p>
+
+          <form class="contact-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email..." required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+      <!-- ===== Footer Section ===== -->
+      <footer class="footer">
+        <div class="footer-container">
+          <p>&copy; 2025 Sherinne. All rights reserved.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- ===== Popup Notification ===== -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <i class="fa-solid fa-circle-check"></i>
+          <p id="popup-text">Pesan berhasil dikirim!</p>
+        </div>
+      </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="./script.js"></script>
-    <script>
-      // membuat tombol clik unutk menampilkan navbar//
-      var togglebtn = document.querySelector(".togglebtn");
-      var navlinks = document.querySelector(".navlinks");
-      var links = document.querySelectorAll(".navlinks li");
 
-      togglebtn.addEventListener("click", function () {
-        this.classList.toggle("click");
-        navlinks.classList.toggle("open");
-      });
+</body>
 
-      var typed = new Typed("#typed-name", {
-        strings: ["Sahrine Estari Ditara"],
-        typeSpeed: 100, // Kecepatan mengetik (ms)
-        backSpeed: 30, // Kecepatan menghapus (ms)
-        backDelay: 1500, // Jeda sebelum menghapus (ms)
-        loop: true, // Ulang terus efeknya
-        showCursor: true,
-        smartBackspace: false,
-      });
-    </script>
-  </body>
 </html>
